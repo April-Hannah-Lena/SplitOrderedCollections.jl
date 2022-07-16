@@ -7,9 +7,9 @@ _testrehash!(xs::OrderedDict) = xs.ndel > 0      && OrderedCollections.rehash!(x
 _testrehash!(xs::OrderedSet)  = xs.dict.ndel > 0 && OrderedCollections.rehash!(xs.dict)
 _testrehash!(xs::LittleDict)  = nothing
 
-SplittablesBase.DictView(xs::OrderedDict, i::Integer, j::Integer) = SplittablesBase.DictView(xs,      i, j, identity)
-SplittablesBase.DictView(xs::LittleDict,  i::Integer, j::Integer) = SplittablesBase.DictView(xs,      i, j, identity)
-SplittablesBase.DictView(xs::Orderedset,  i::Integer, j::Integer) = SplittablesBase.DictView(xs.dict, i, j, first)
+SplittablesBase.DictView(xs::OrderedDict, i::Int, j::Int) = SplittablesBase.DictView(xs,      i, j, identity)
+SplittablesBase.DictView(xs::LittleDict,  i::Int, j::Int) = SplittablesBase.DictView(xs,      i, j, identity)
+SplittablesBase.DictView(xs::Orderedset,  i::Int, j::Int) = SplittablesBase.DictView(xs.dict, i, j, first)
 
 SplittablesBase.firstslot(::Union{OrderedDict,OrderedSet,LittleDict}) = 1
 
