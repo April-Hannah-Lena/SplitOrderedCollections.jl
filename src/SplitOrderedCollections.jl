@@ -1,3 +1,5 @@
+module SplitOrderedCollections
+
 using OrderedCollections
 using SplittablesBase
 
@@ -28,3 +30,5 @@ function SplittablesBase.halve(xs::Union{OrderedDict,OrderedSet,LittleDict})
     right = SplittablesBase.DictView(xs, i2 + 1, i3)
     return (left, right)
 end
+
+end # module
